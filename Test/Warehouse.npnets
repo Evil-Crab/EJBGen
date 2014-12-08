@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npnets:PetriNetNestedMarked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:npnets="mathtech.ru/npntool/npnets" xsi:schemaLocation="mathtech.ru/npntool/npnets http://mathtech.ru/npntool/nets/#//npnets" id="129460">
+  <net id="2190">
+    <netSystem id="42551" name="Warehouse">
+      <places id="301099" name="OnOff" outArcs="#2771999 #277192343" inArcs="#4020384 #5120384" type="#208000"/>
+      <places id="2282711" name="Queque" outArcs="#25192343" inArcs="#749192343" type="#2446026"/>
+      <places id="2101113" name="Working" outArcs="#6563433" inArcs="#2234444" type="#2446026"/>
+      <places id="1973115" name="Warehouse" outArcs="#94392343" inArcs="#7430384" type="#208000"/>
+      <places id="1833117" name="InUse" outArcs="#75452343" inArcs="#246784" type="#208000"/>
+      <places id="1697119" name="Return" outArcs="#7719382" inArcs="#8530384" type="#2446026"/>    
+      <transitions id="14341114" name="NeedTool" inArcs="#2771999" outArcs="#4020384 #749192343">
+        <variables id="1773875" name="x"/>
+        <variables id="3523523" name="C1"/>
+      </transitions>
+      <transitions xsi:type="npnets:TransitionSynchronized" id="16038116" name="GetTool" inArcs="#25192343 #94392343" outArcs="#246784 #2234444" synchronization="#7856732">
+        <variables id="2742382" name="x"/>
+        <variables id="4562382" name="y"/>
+      </transitions>
+      <transitions xsi:type="npnets:TransitionSynchronized" id="17686118" name="FinishWork" inArcs="#6563433 #277192343" outArcs="#5120384 #8530384" synchronization="#50186"> 
+        <variables id="4564589" name="x"/>
+        <variables id="4343588" name="y"/>
+      </transitions>
+      <transitions xsi:type="npnets:TransitionSynchronized" id="19533120" name="ReturnTool" inArcs="#7719382 #75452343" outArcs="#7430384" synchronization="#354356">
+        <variables id="2406696" name="x"/>
+        <variables id="3134589" name="y"/>
+      </transitions>
+      <arcsPT id="2771999" name="ar1" inPlace="#301099" outTransition="#14341114">
+        <inscription id="27812361">
+          <monoms id="85824320" variable="#1773875"/>
+        </inscription>
+      </arcsPT>
+      <arcsPT id="277192343" name="ar2" inPlace="#301099" outTransition="#17686118">
+        <inscription id="35812361">
+          <monoms id="85820" variable="#4343588"/>
+        </inscription>
+      </arcsPT>
+      <arcsPT id="25192343" name="ar4" inPlace="#2282711" outTransition="#16038116">
+        <inscription id="3535661">
+          <monoms id="854720" variable="#2742382"/>
+        </inscription>
+      </arcsPT>
+      <arcsPT id="94392343" name="ar5" inPlace="#1973115" outTransition="#16038116">
+        <inscription id="4445661">
+          <monoms id="356720" variable="#4562382"/>
+        </inscription>
+      </arcsPT>
+      <arcsPT id="75452343" name="ar6" inPlace="#1833117" outTransition="#19533120">
+        <inscription id="44534661">
+          <monoms id="335520" variable="#3134589"/>
+        </inscription>
+      </arcsPT>
+      <arcsPT id="6563433" name="ar7" inPlace="#2101113" outTransition="#17686118">
+        <inscription id="456643661">
+          <monoms id="357520" variable="#4564589"/>
+        </inscription>
+      </arcsPT>
+      <arcsPT id="7719382" name="ar10" inPlace="#1697119" outTransition="#19533120">
+        <inscription id="723638">
+          <monoms id="1527290" variable="#2406696"/>
+        </inscription>
+      </arcsPT>
+      <arcsTP id="749192343" name="ar3" inTransition="#14341114" outPlace="#2282711">
+        <inscription id="35815661">
+          <monomConstants id="3465465" constant="3523523" value="1838010"/>
+        </inscription>
+      </arcsTP>   
+      <arcsTP id="4020384" name="ar11" inTransition="#14341114" outPlace="#301099">
+        <inscription id="7236639">
+          <monoms id="15237290" variable="#1773875"/>
+        </inscription>
+      </arcsTP>
+      <arcsTP id="5120384" name="ar12" inTransition="#17686118" outPlace="#301099">
+        <inscription id="7656639">
+          <monoms id="78237290" variable="#4343588"/>
+        </inscription>
+      </arcsTP>
+      <arcsTP id="8530384" name="ar13" inTransition="#17686118" outPlace="#1697119">
+        <inscription id="76456639">
+          <monoms id="7824490" variable="#4564589"/>
+        </inscription>
+      </arcsTP>
+      <arcsTP id="7430384" name="ar14" inTransition="#19533120" outPlace="#1973115">
+        <inscription id="77776639">
+          <monoms id="2324490" variable="#3134589"/>
+        </inscription>
+      </arcsTP>
+      <arcsTP id="246784" name="ar15" inTransition="#16038116" outPlace="#1833117">
+        <inscription id="77246639">
+          <monoms id="2874590" variable="#4562382"/>
+        </inscription>
+      </arcsTP>
+      <arcsTP id="2234444" name="ar16" inTransition="#16038116" outPlace="#2101113">
+        <inscription id="43756639">
+          <monoms id="6774590" variable="#2742382"/>
+        </inscription>
+      </arcsTP>
+
+    </netSystem>
+    <typeElementNet id="2446026" name="Worker">
+      <elementNetMarkeds id="291482">
+        <marking id="274883">
+          <map id="87563" place="#1391912">
+            <marking id="51667" type="#208000">
+              <weight id="94211" token="#297533" weight="1"/>
+            </marking>
+          </map>
+        </marking>
+      </elementNetMarkeds>
+      <net id="2848527">
+        <places id="1391912" name="Waiting" outArcs="#28953259" inArcs="" type="#208000"/>
+        <places id="571114" name="Using" outArcs="#31175261" inArcs="#17926385" type="#208000"/>
+        <places id="155916" name="Finishing" outArcs="#32761263" inArcs="#15575387" type="#208000"/>
+        <places id="31318" name="Gone" outArcs="" inArcs="#13576389" type="#208000"/>
+
+        <transitions xsi:type="npnets:TransitionSynchronized" id="714968" name="TakeTool" inArcs="#28953259" outArcs="#17926385" synchronization="#7856732">
+          <variables id="3219065" name="x"/>
+        </transitions>
+        <transitions xsi:type="npnets:TransitionSynchronized" id="2293078" name="FinishJob" inArcs="#31175261" outArcs="#15575387" synchronization="#50186">
+          <variables id="2585676" name="x"/>
+        </transitions>
+        <transitions xsi:type="npnets:TransitionSynchronized" id="2765672" name="GoAway" inArcs="#32761263" outArcs="#13576389" synchronization="#354356">
+          <variables id="354356" name="x"/>
+        </transitions>
+
+        <arcsPT id="28953259" inPlace="#1391912" outTransition="#714968">
+          <inscription id="1485329">
+            <monoms id="1618524" variable="#3219065"/>
+          </inscription>
+        </arcsPT>
+        <arcsPT id="31175261" inPlace="#571114" outTransition="#2293078">
+          <inscription id="14823449">
+            <monoms id="16244524" variable="#2585676"/>
+          </inscription>
+        </arcsPT>
+        <arcsPT id="32761263" inPlace="#155916" outTransition="#2765672">
+          <inscription id="14564649">
+            <monoms id="134534524" variable="#2029984"/>
+          </inscription>
+        </arcsPT>
+        <arcsPT id="31088265" inPlace="#31318" outTransition="#3153283">
+          <inscription id="143454649">
+            <monoms id="13233524" variable="#1881187"/>
+          </inscription>
+        </arcsPT>
+        <arcsPT id="23710273" inPlace="#256120" outTransition="#2998385">
+          <inscription id="346454649">
+            <monoms id="88634524" variable="#12051101"/>
+          </inscription>
+        </arcsPT>
+      
+        <arcsTP id="17926385" inTransition="#714968" outPlace="#571114">
+          <inscription id="1909232">
+            <monoms id="2088426" variable="#3219065"/>
+          </inscription>
+        </arcsTP>
+        <arcsTP id="15575387" inTransition="#2293078" outPlace="#155916">
+          <inscription id="1353232">
+            <monoms id="2643226" variable="#2585676"/>
+          </inscription>
+        </arcsTP>
+        <arcsTP id="13576389" inTransition="#2765672" outPlace="#31318">
+          <inscription id="134657232">
+            <monoms id="2667426" variable="#2029984"/>
+          </inscription>
+        </arcsTP>
+      </net>
+      <tokenNets id="1838010" name="Worker1" value="#291482"/>
+    </typeElementNet>
+    <typeAtomic id="208000">
+      <instance id="226000" name="Black"/>
+      <atom id="297533" value="#226000"/>
+    </typeAtomic>
+    <synchronizations id="7856732" name="GetTool" key="L1" involved="#16038116 #714968"/>
+    <synchronizations id="50186" name="FinishTask" key="L2" involved="#17686118 #2293078"/>
+    <synchronizations id="354356" name="ReturnTool" key="L3" involved="#19533120 #2765672"/>
+  </net>
+  <marking id="21362">
+    <map id="3045352" place="#301099">
+      <marking id="11435446" type="#208000">
+        <weight id="9634535" token="#135670" weight="1"/>
+      </marking>
+    </map>
+  </marking>
+  <marking id="213242">
+    <map id="3045355" place="#1973115">
+      <marking id="114346" type="#208000">
+        <weight id="96535" token="#135670" weight="5"/>
+      </marking>
+    </map>
+  </marking>
+</npnets:PetriNetNestedMarked>

@@ -1,0 +1,4 @@
+%import%
+%extra%
+%action%
+System.out.println("SUBNET: " + key + "; TRANSITION " + name + " EXECUTED");

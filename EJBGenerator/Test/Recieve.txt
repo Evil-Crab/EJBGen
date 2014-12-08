@@ -1,0 +1,10 @@
+%import%
+import java.util.Random;
+%extra%
+Random rnd = new Random();
+        if(rnd.nextInt() % 3 == 0)
+            return true;
+        else
+            return false;
+%action%
+System.out.println("TRANSITION " + name + " EXECUTED");

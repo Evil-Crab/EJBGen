@@ -1,0 +1,19 @@
+--- !ruby/object:VR_ENV
+browser: firefox
+width: 800
+height: 600
+panel_pos: 360
+backup_path: C:/Users/Artem
+tab_spaces: 2
+run_command_line: ruby main.rb
+open_files:
+- D:/Projects/EJBGenerator/Gui/EJBGenerator.rb
+open_folders:
+- D:/Projects/EJBGenerator/Gui
+current_file: D:/Projects/EJBGenerator/Gui/EJBGenerator.rb
+glade_path: glade-3
+font_name: Monospace 10
+rdoc_command_line: rdoc -x README
+builder: !ruby/object:Gtk::Builder {}
+glade_box: !ruby/object:VR::SimpleComboBoxEntry {}
+browser_box: !ruby/object:VR::SimpleComboBoxEntry {}

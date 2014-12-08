@@ -1,0 +1,4 @@
+%import%
+%extra%
+%action%
+System.out.println("TRANSITION " + name + " EXECUTED");

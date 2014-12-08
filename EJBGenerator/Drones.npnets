@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npnets:PetriNetNestedMarked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:npnets="mathtech.ru/npntool/npnets" xsi:schemaLocation="mathtech.ru/npntool/npnets http://mathtech.ru/npntool/nets/#//npnets" id="129460">
+  <net id="2190">
+    <netSystem id="42551" name="System Net">
+      <places id="301099" name="Base1" outArcs="#27719199" inArcs="#27564397" type="#2446026"/>
+      <places id="2282711" name="Base2" outArcs="#29315201" inArcs="#30372398" type="#2446026"/>
+      <places id="2101113" name="Base3" outArcs="#31212203" inArcs="#32127399" type="#2446026"/>
+      <places id="1973115" name="InAir1" outArcs="#32557205" inArcs="#7719382" type="#2446026"/>
+      <places id="1833117" name="InAir2" outArcs="#30845207" inArcs="#4020384" type="#2446026"/>
+      <places id="1697119" name="InAir3" outArcs="#28437209" inArcs="#6131386" type="#2446026"/>
+      <places id="1537221" name="Orbiting1" outArcs="#26707211" inArcs="#7899388" type="#2446026"/>
+      <places id="1340423" name="Orbiting2" outArcs="#21462213" inArcs="#11042390" type="#2446026"/>
+      <places id="1196225" name="Orbiting3" outArcs="#19542215" inArcs="#16068393" type="#2446026"/>
+      <places id="1066827" name="Returning1" outArcs="#17918217" inArcs="#18657394" type="#2446026"/>
+      <places id="904429" name="Returning2" outArcs="#14294219" inArcs="#22124395" type="#2446026"/>
+      <places id="720531" name="Returning3" outArcs="#12471221" inArcs="#24968396" type="#2446026"/>
+      <transitions xsi:type="npnets:TransitionSynchronized" id="14341114" name="Leave1" inArcs="#27719199" outArcs="#7719382" synchronization="#121294">
+        <variables id="1773875" name="x"/>
+      </transitions>
+      <transitions xsi:type="npnets:TransitionSynchronized" id="16038116" name="Leave2" inArcs="#29315201" outArcs="#4020384" synchronization="#121294">
+        <variables id="2742382" name="x"/>
+      </transitions>
+      <transitions xsi:type="npnets:TransitionSynchronized" id="17686118" name="Leave3" inArcs="#31212203" outArcs="#6131386" synchronization="#121294">
+        <variables id="3134589" name="x"/>
+      </transitions>
+      <transitions xsi:type="npnets:TransitionSynchronized" id="19533120" name="OnOrbit1" inArcs="#32557205" outArcs="#7899388" synchronization="#50186">
+        <variables id="2406696" name="x"/>
+      </transitions>
+      <transitions xsi:type="npnets:TransitionSynchronized" id="21164122" name="OnOrbit2" inArcs="#30845207" outArcs="#11042390" synchronization="#50186">
+        <variables id="8534103" name="x"/>
+      </transitions>
+      <transitions xsi:type="npnets:TransitionSynchronized" id="22796124" name="OnOrbit3" inArcs="#28437209" outArcs="#16068393" synchronization="#50186">
+        <variables id="5112110" name="x"/>
+      </transitions>
+      <transitions id="24349126" name="Return1" inArcs="#17918217" outArcs="#27564397">
+        <variables id="268117" name="x"/>
+      </transitions>
+      <transitions id="26124128" name="Return2" inArcs="#14294219" outArcs="#30372398">
+        <variables id="4903125" name="x"/>
+      </transitions>
+      <transitions id="27756130" name="Return3" inArcs="#12471221" outArcs="#32127399">
+        <variables id="8121132" name="x"/>
+      </transitions>
+      <transitions xsi:type="npnets:TransitionSynchronized" id="29476132" name="Attack" inArcs="#26707211 #21462213 #19542215" outArcs="#18657394 #22124395 #24968396" synchronization="#230267">
+        <variables id="15825139" name="x"/>
+        <variables id="17342140" name="y"/>
+        <variables id="20055141" name="z"/>
+      </transitions>
+      <arcsPT id="27719199" name="bl1" inPlace="#301099" outTransition="#14341114">
+        <inscription id="27812361">
+          <monoms id="85820" variable="#1773875"/>
+        </inscription>
+      </arcsPT>
+      <arcsPT id="29315201" name="bl2" inPlace="#2282711" outTransition="#16038116">
+        <inscription id="111481">
+          <monoms id="82297" variable="#2742382"/>
+        </inscription>
+      </arcsPT>
+      <arcsPT id="31212203" name="bl3" inPlace="#2101113" outTransition="#17686118">
+        <inscription id="13713">
+          <monoms id="18914" variable="#3134589"/>
+        </inscription>
+      </arcsPT>
+      <arcsPT id="32557205" name="io1" inPlace="#1973115" outTransition="#19533120">
+        <inscription id="198465">
+          <monoms id="3047523" variable="#2406696"/>
+        </inscription>
+      </arcsPT>
+      <arcsPT id="30845207" name="io2" inPlace="#1833117" outTransition="#21164122">
+        <inscription id="248507">
+          <monoms id="2357130" variable="#8534103"/>
+        </inscription>
+      </arcsPT>
+      <arcsPT id="28437209" name="io3" inPlace="#1697119" outTransition="#22796124">
+        <inscription id="183319">
+          <monoms id="1707737" variable="#5112110"/>
+        </inscription>
+      </arcsPT>
+      <arcsPT id="26707211" name="oa1" inPlace="#1537221" outTransition="#29476132">
+        <inscription id="820311">
+          <monoms id="674644" variable="#15825139"/>
+        </inscription>
+      </arcsPT>
+      <arcsPT id="21462213" name="oa2" inPlace="#1340423" outTransition="#29476132">
+        <inscription id="705213">
+          <monoms id="822651" variable="#17342140"/>
+        </inscription>
+      </arcsPT>
+      <arcsPT id="19542215" name="oa3" inPlace="#1196225" outTransition="#29476132">
+        <inscription id="1361515">
+          <monoms id="1474258" variable="#20055141"/>
+        </inscription>
+      </arcsPT>
+      <arcsPT id="17918217" name="rr1" inPlace="#1066827" outTransition="#24349126">
+        <inscription id="2170117">
+          <monoms id="2303765" variable="#268117"/>
+        </inscription>
+      </arcsPT>
+      <arcsPT id="14294219" name="rr2" inPlace="#904429" outTransition="#26124128">
+        <inscription id="2681520">
+          <monoms id="2515272" variable="#4903125"/>
+        </inscription>
+      </arcsPT>
+      <arcsPT id="12471221" name="rr3" inPlace="#720531" outTransition="#27756130">
+        <inscription id="1952622">
+          <monoms id="1795979" variable="#8121132"/>
+        </inscription>
+      </arcsPT>
+      <arcsTP id="7719382" name="li1" inTransition="#14341114" outPlace="#1973115">
+        <inscription id="723638">
+          <monoms id="1527290" variable="#1773875"/>
+        </inscription>
+      </arcsTP>
+      <arcsTP id="4020384" name="li2" inTransition="#16038116" outPlace="#1833117">
+        <inscription id="2940642">
+          <monoms id="3059597" variable="#2742382"/>
+        </inscription>
+      </arcsTP>
+      <arcsTP id="6131386" name="li3" inTransition="#17686118" outPlace="#1697119">
+        <inscription id="3049444">
+          <monoms id="28539104" variable="#3134589"/>
+        </inscription>
+      </arcsTP>
+      <arcsTP id="7899388" name="oo1" inTransition="#19533120" outPlace="#1537221">
+        <inscription id="1748546">
+          <monoms id="15807111" variable="#2406696"/>
+        </inscription>
+      </arcsTP>
+      <arcsTP id="11042390" name="oo2" inTransition="#21164122" outPlace="#1340423">
+        <inscription id="955148">
+          <monoms id="7621118" variable="#8534103"/>
+        </inscription>
+      </arcsTP>
+      <arcsTP id="16068393" name="oo3" inTransition="#22796124" outPlace="#1196225">
+        <inscription id="234750">
+          <monoms id="737125" variable="#5112110"/>
+        </inscription>
+      </arcsTP>
+      <arcsTP id="18657394" name="ar1" inTransition="#29476132" outPlace="#1066827">
+        <inscription id="1409852">
+          <monoms id="15744132" variable="#15825139"/>
+        </inscription>
+      </arcsTP>
+      <arcsTP id="22124395" name="ar2" inTransition="#29476132" outPlace="#904429">
+        <inscription id="2368654">
+          <monoms id="25382139" variable="#17342140"/>
+        </inscription>
+      </arcsTP>
+      <arcsTP id="24968396" name="ar3" inTransition="#29476132" outPlace="#720531">
+        <inscription id="3032156">
+          <monoms id="31872146" variable="#20055141"/>
+        </inscription>
+      </arcsTP>
+      <arcsTP id="27564397" name="rb1" inTransition="#24349126" outPlace="#301099">
+        <inscription id="2504858">
+          <monoms id="22966153" variable="#268117"/>
+        </inscription>
+      </arcsTP>
+      <arcsTP id="30372398" name="rb2" inTransition="#26124128" outPlace="#2282711">
+        <inscription id="1525260">
+          <monoms id="13787160" variable="#4903125"/>
+        </inscription>
+      </arcsTP>
+      <arcsTP id="32127399" name="rb3" inTransition="#27756130" outPlace="#2101113">
+        <inscription id="865562">
+          <monoms id="7162167" variable="#8121132"/>
+        </inscription>
+      </arcsTP>
+    </netSystem>
+    <typeElementNet id="2446026" name="Drone">
+      <elementNetMarkeds id="291482">
+        <marking id="274883">
+          <map id="87563" place="#1391912">
+            <marking id="51667" type="#208000">
+              <weight id="94211" token="#297533" weight="1"/>
+            </marking>
+          </map>
+        </marking>
+      </elementNetMarkeds>
+      <net id="2848527">
+        <places id="1391912" name="Ground" outArcs="#28953259" inArcs="#5048399" type="#208000"/>
+        <places id="571114" name="Air" outArcs="#31175261" inArcs="#17926385" type="#208000"/>
+        <places id="155916" name="Searching" outArcs="#32761263" inArcs="#15575387" type="#208000"/>
+        <places id="31318" name="Orbiting" outArcs="#31088265 #29649267" inArcs="#13576389 #10151393" type="#208000"/>
+        <places id="256120" name="Avoiding" outArcs="#23710273" inArcs="#11896391" type="#208000"/>
+        <places id="428122" name="Attacking" outArcs="#28049269" inArcs="#8535395" type="#208000"/>
+        <places id="625624" name="Returning" outArcs="#26417271" inArcs="#6720397" type="#208000"/>
+        <transitions xsi:type="npnets:TransitionSynchronized" id="714968" name="Leave" inArcs="#28953259" outArcs="#17926385" synchronization="#121294">
+          <variables id="3219065" name="x"/>
+        </transitions>
+        <transitions id="2293078" name="OnSearch" inArcs="#31175261" outArcs="#15575387">
+          <variables id="2585676" name="x"/>
+        </transitions>
+        <transitions xsi:type="npnets:TransitionSynchronized" id="2765672" name="OnOrbit" inArcs="#32761263" outArcs="#13576389" synchronization="#50186">
+          <variables id="2029984" name="x"/>
+        </transitions>
+        <transitions id="3153283" name="Close" inArcs="#31088265" outArcs="#11896391">
+          <variables id="1881187" name="x"/>
+        </transitions>
+        <transitions id="2998385" name="Continue" inArcs="#23710273" outArcs="#10151393">
+          <variables id="12051101" name="x"/>
+        </transitions>
+        <transitions xsi:type="npnets:TransitionSynchronized" id="2642379" name="dAttack" inArcs="#29649267" outArcs="#8535395" synchronization="#230267">
+          <variables id="1398596" name="x"/>
+        </transitions>
+        <transitions id="2155189" name="FinishAttack" inArcs="#28049269" outArcs="#6720397">
+          <variables id="1551693" name="x"/>
+        </transitions>
+        <transitions id="1736791" name="Return" inArcs="#26417271" outArcs="#5048399">
+          <variables id="1709490" name="x"/>
+        </transitions>
+        <arcsPT id="28953259" name="" inPlace="#1391912" outTransition="#714968">
+          <inscription id="1485329">
+            <monoms id="1618524" variable="#3219065"/>
+          </inscription>
+        </arcsPT>
+        <arcsPT id="31175261" inPlace="#571114" outTransition="#2293078">
+          <inscription id="1756361">
+            <monoms id="1904854" variable="#2585676"/>
+          </inscription>
+        </arcsPT>
+        <arcsPT id="32761263" inPlace="#155916" outTransition="#2765672">
+          <inscription id="1350058">
+            <monoms id="1496752" variable="#2029984"/>
+          </inscription>
+          <comment></comment>
+        </arcsPT>
+        <arcsPT id="31088265" inPlace="#31318" outTransition="#3153283">
+          <inscription id="908456">
+            <monoms id="1055450" variable="#1881187"/>
+          </inscription>
+        </arcsPT>
+        <arcsPT id="29649267" inPlace="#31318" outTransition="#2642379">
+          <inscription id="584654">
+            <monoms id="703248" variable="#1398596"/>
+          </inscription>
+        </arcsPT>
+        <arcsPT id="28049269" inPlace="#428122" outTransition="#2155189">
+          <inscription id="107552">
+            <monoms id="378146" variable="#1551693"/>
+          </inscription>
+        </arcsPT>
+        <arcsPT id="26417271" inPlace="#625624" outTransition="#1736791">
+          <inscription id="521950">
+            <monoms id="337244" variable="#1709490"/>
+          </inscription>
+        </arcsPT>
+        <arcsPT id="23710273" inPlace="#256120" outTransition="#2998385">
+          <inscription id="985048">
+            <monoms id="835742" variable="#12051101"/>
+          </inscription>
+        </arcsPT>
+        <arcsTP id="17926385" inTransition="#714968" outPlace="#571114">
+          <inscription id="1385046">
+            <monoms id="1246340" variable="#3219065"/>
+          </inscription>
+        </arcsTP>
+        <arcsTP id="15575387" inTransition="#2293078" outPlace="#155916">
+          <inscription id="1845844">
+            <monoms id="1661238" variable="#2585676"/>
+          </inscription>
+        </arcsTP>
+        <arcsTP id="13576389" inTransition="#2765672" outPlace="#31318">
+          <inscription id="2348142">
+            <monoms id="2138436" variable="#2029984"/>
+          </inscription>
+        </arcsTP>
+        <arcsTP id="11896391" inTransition="#3153283" outPlace="#256120">
+          <inscription id="2769840">
+            <monoms id="2609634" variable="#1881187"/>
+          </inscription>
+        </arcsTP>
+        <arcsTP id="10151393" inTransition="#2998385" outPlace="#31318">
+          <inscription id="3204138">
+            <monoms id="3023732" variable="#12051101"/>
+          </inscription>
+        </arcsTP>
+        <arcsTP id="8535395" inTransition="#2642379" outPlace="#428122">
+          <inscription id="2925436">
+            <monoms id="3083930" variable="#1398596"/>
+          </inscription>
+        </arcsTP>
+        <arcsTP id="6720397" inTransition="#2155189" outPlace="#625624">
+          <inscription id="2444834">
+            <monoms id="2594628" variable="#1551693"/>
+          </inscription>
+        </arcsTP>
+        <arcsTP id="5048399" inTransition="#1736791" outPlace="#1391912">
+          <inscription id="1909232">
+            <monoms id="2088426" variable="#1709490"/>
+          </inscription>
+        </arcsTP>
+      </net>
+      <tokenNets id="1838010" name="Drone1" value="#291482"/>
+      <tokenNets id="1575412" name="Drone2" value="#291482"/>
+      <tokenNets id="1414614" name="Drone3" value="#291482"/>
+    </typeElementNet>
+    <typeAtomic id="208000">
+      <instance id="226000" name="Atom"/>
+      <atom id="297533" value="#226000"/>
+    </typeAtomic>
+    <synchronizations id="230267" name="Attack" key="L1" involved="#29476132 #2642379"/>
+    <synchronizations id="121294" name="Leave" key="L2" involved="#16038116 #14341114 #17686118 #714968"/>
+    <synchronizations id="50186" name="OnOrbit" key="L3" involved="#19533120 #21164122 #22796124 #2765672"/>
+  </net>
+  <marking id="21362">
+    <map id="300082" place="#301099">
+      <marking id="1142226" type="#2446026">
+        <weight id="964915" token="#1838010" weight="1"/>
+      </marking>
+    </map>
+    <map id="276084" place="#2282711">
+      <marking id="326128" type="#2446026">
+        <weight id="225317" token="#1575412" weight="1"/>
+      </marking>
+    </map>
+    <map id="261296" place="#2101113">
+      <marking id="18030" type="#2446026">
+        <weight id="91519" token="#1414614" weight="1"/>
+      </marking>
+    </map>
+  </marking>
+</npnets:PetriNetNestedMarked>
